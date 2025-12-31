@@ -1,4 +1,4 @@
-#ifndef CERTS_H
+
 #define CERTS_H
 
 #include <pgmspace.h>
@@ -39,4 +39,3 @@ static const char DEVICE_PRIVATE_KEY[] PROGMEM = R"KEY(
 -----END RSA PRIVATE KEY-----
 )KEY";
 
-#endif
