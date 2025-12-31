@@ -281,12 +281,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **Srijani Dey**
 
-- 🌐 GitHub: [@ssreyz](https://github.com/ssreyz)
-- 💼 LinkedIn: [srijani-dey](https://linkedin.com/in/srijani-dey)
-- 📧 Email: srijani.258@gmail.com
-- 🎓 ECE Student at St. Thomas College of Engineering & Technology
-- ☁️ AWS Certified: Cloud Practitioner & IoT Foundations
-
 *Passionate about IoT, embedded systems, and cloud integration. Currently exploring AI/ML applications in edge computing.*
 
 ---
