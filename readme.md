@@ -245,14 +245,6 @@ Humidity: 45.5%  Temperature: 23.8°C
 *Complete circuit on breadboard with labeled connections*
 
 ---
-### AWS IoT Core - Certificates
-
-  <img width="758" height="924" alt="Screenshot 2025-12-31 172509" src="https://github.com/user-attachments/assets/1596057c-0a80-499b-b5e5-ae0f62718dfa" />
-
-
-*All the certificate is needed to connect iot to AWS*
-
----
 
 ## 📊 Performance Metrics
 
