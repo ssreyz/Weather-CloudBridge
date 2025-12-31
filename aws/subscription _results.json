@@ -8,7 +8,7 @@
       "timestamp": 1767199540370,
       "payload": {
         "humidity": 13.6,
-        "temperature": -0.2
+        "temperature": 15.2
       },
       "qos": 0
     },
@@ -18,7 +18,7 @@
       "timestamp": 1767199538640,
       "payload": {
         "humidity": 13.4,
-        "temperature": -0.1
+        "temperature": 15.1
       },
       "qos": 0
     },
@@ -28,7 +28,7 @@
       "timestamp": 1767199536311,
       "payload": {
         "humidity": 13.3,
-        "temperature": -0.1
+        "temperature": 15.1
       },
       "qos": 0
     },
@@ -38,7 +38,7 @@
       "timestamp": 1767199534290,
       "payload": {
         "humidity": 13.2,
-        "temperature": -0.1
+        "temperature": 15.1
       },
       "qos": 0
     },
@@ -48,7 +48,7 @@
       "timestamp": 1767199532284,
       "payload": {
         "humidity": 13.1,
-        "temperature": 0
+        "temperature": 15.0
       },
       "qos": 0
     },
@@ -58,7 +58,7 @@
       "timestamp": 1767199530240,
       "payload": {
         "humidity": 12.9,
-        "temperature": 0
+        "temperature": 15.0
       },
       "qos": 0
     },
@@ -68,7 +68,7 @@
       "timestamp": 1767199528279,
       "payload": {
         "humidity": 12.9,
-        "temperature": 0
+        "temperature": 15.0
       },
       "qos": 0
     },
@@ -78,7 +78,7 @@
       "timestamp": 1767199526190,
       "payload": {
         "humidity": 12.7,
-        "temperature": 0.1
+        "temperature": 15.1
       },
       "qos": 0
     },
@@ -88,7 +88,7 @@
       "timestamp": 1767199524207,
       "payload": {
         "humidity": 12.6,
-        "temperature": 0.1
+        "temperature": 15.1
       },
       "qos": 0
     },
@@ -98,7 +98,7 @@
       "timestamp": 1767199522138,
       "payload": {
         "humidity": 12.4,
-        "temperature": 0.1
+        "temperature": 15.1
       },
       "qos": 0
     },
@@ -108,7 +108,7 @@
       "timestamp": 1767199520114,
       "payload": {
         "humidity": 12.3,
-        "temperature": 0.2
+        "temperature": 15.2
       },
       "qos": 0
     },
@@ -118,7 +118,7 @@
       "timestamp": 1767199518079,
       "payload": {
         "humidity": 12.2,
-        "temperature": 0.2
+        "temperature": 15.2
       },
       "qos": 0
     },
@@ -128,7 +128,7 @@
       "timestamp": 1767199516059,
       "payload": {
         "humidity": 12,
-        "temperature": 0.3
+        "temperature": 15.3
       },
       "qos": 0
     },
@@ -138,7 +138,7 @@
       "timestamp": 1767199514028,
       "payload": {
         "humidity": 11.9,
-        "temperature": 0.3
+        "temperature": 15.3
       },
       "qos": 0
     },
@@ -148,7 +148,7 @@
       "timestamp": 1767199511998,
       "payload": {
         "humidity": 11.8,
-        "temperature": 0.3
+        "temperature": 15.3
       },
       "qos": 0
     },
@@ -158,7 +158,7 @@
       "timestamp": 1767199509987,
       "payload": {
         "humidity": 11.6,
-        "temperature": 0.4
+        "temperature": 15.4
       },
       "qos": 0
     },
@@ -168,7 +168,7 @@
       "timestamp": 1767199507968,
       "payload": {
         "humidity": 11.5,
-        "temperature": 0.4
+        "temperature": 15.4
       },
       "qos": 0
     },
@@ -178,7 +178,7 @@
       "timestamp": 1767199505939,
       "payload": {
         "humidity": 11.4,
-        "temperature": 0.5
+        "temperature": 15.5
       },
       "qos": 0
     },
@@ -188,7 +188,7 @@
       "timestamp": 1767199503934,
       "payload": {
         "humidity": 11.3,
-        "temperature": 0.5
+        "temperature": 15.5
       },
       "qos": 0
     },
@@ -198,7 +198,7 @@
       "timestamp": 1767199501879,
       "payload": {
         "humidity": 11.2,
-        "temperature": 0.5
+        "temperature": 15.5
       },
       "qos": 0
     }
