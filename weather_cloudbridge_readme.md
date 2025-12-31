@@ -4,7 +4,7 @@ A production-grade IoT environmental monitoring system that seamlessly connects 
 
 ---
 
-## 🎯 Why Weather-CloudBridge?
+##  Why Weather-CloudBridge?
 
 This project isn't just another IoT demo—it's a **complete, deployment-ready solution** that demonstrates:
 
@@ -18,7 +18,7 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 
 ---
 
-## 📊 System Architecture
+##  System Architecture
 
 ```
 ┌──────────────────┐
@@ -43,8 +43,8 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 ┌──────────────────┐
 │  AWS IoT Core    │  Fully Managed IoT Message Broker
 │  (Message Broker)│  
-│                  │  📤 Topic: esp32/pub (Device → Cloud)
-│  Device Shadow   │  📥 Topic: esp32/sub (Cloud → Device)
+│                  │   Topic: esp32/pub (Device → Cloud)
+│  Device Shadow   │   Topic: esp32/sub (Cloud → Device)
 │  Rules Engine    │  
 │  Authentication  │  
 └────────┬─────────┘
@@ -63,27 +63,27 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-### 🔐 Security First
+###  Security First
 - **X.509 Certificate Authentication**: Industry-standard device identity verification
 - **TLS 1.2 Encryption**: All data encrypted in transit
 - **AWS IoT Policy**: Fine-grained access control with least-privilege principles
 - **Secure Credential Storage**: Certificates stored in flash memory, excluded from version control
 
-### 📡 Robust Connectivity
+###  Robust Connectivity
 - **Automatic WiFi Reconnection**: Handles network drops gracefully
 - **MQTT Keep-Alive**: Persistent connection with heartbeat monitoring
 - **Connection State Management**: Smart reconnection logic with exponential backoff
 - **Signal Strength Monitoring**: Real-time WiFi RSSI reporting
 
-### 📊 Real-Time Data Pipeline
+###  Real-Time Data Pipeline
 - **Bidirectional Communication**: Publish sensor data AND receive cloud commands
 - **JSON-Formatted Payloads**: Structured data for seamless integration
 - **Configurable Sampling**: Adjustable data transmission intervals (default: 2 seconds)
 - **Device Health Metrics**: WiFi strength, memory usage, uptime tracking
 
-### 🛠️ Developer Experience
+###  Developer Experience
 - **Modular Code Structure**: Clean separation of concerns
 - **Comprehensive Logging**: Detailed serial output for debugging
 - **Example Configuration**: Template files for quick setup
@@ -91,7 +91,7 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 
 ---
 
-## 🔧 Hardware Requirements
+##  Hardware Requirements
 
 | Component | Specification | Purpose |
 |-----------|--------------|---------|
@@ -102,7 +102,7 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 
 ---
 
-## 🔌 Pin Configuration & Wiring
+##  Pin Configuration & Wiring
 
 ### Connection Diagram
 
@@ -117,14 +117,14 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 | Pin 2 (DATA) | Purple | GPIO 4 (D4) | Data signal |
 | Pin 3 (GND) | Black | GND | Ground |
 
-> ⚠️ **Important**: DHT11 operates at **3.3V only**. Do **NOT** connect to 5V pin to avoid permanent damage.
+>  **Important**: DHT11 operates at **3.3V only**. Do **NOT** connect to 5V pin to avoid permanent damage.
 
 ### Physical Setup Photo
 
 
 ---
 
-## 📡 MQTT Communication Protocol
+##  MQTT Communication Protocol
 
 ### Topic Structure
 
@@ -160,7 +160,7 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 }
 ```
 
-## 🚀 Quick Start Guide
+##  Quick Start Guide
 
 ### Prerequisites
 
@@ -197,7 +197,7 @@ Built-in libraries (no installation needed):
 
    ```
 
-### Expected output:
+## Expected output:
 ```
 === ESP32 Weather-CloudBridge ===
 Connecting to WiFi...
@@ -211,7 +211,7 @@ Humidity: 45.5%  Temperature: 23.8°C
 ✓ Message published
 ```
 
-### Verify in AWS IoT Console:
+## Verify in AWS IoT Console:
    ```
    Test → MQTT test client
    Subscribe to: esp32/pub
@@ -219,7 +219,7 @@ Humidity: 45.5%  Temperature: 23.8°C
 
 ---
 
-## 📸 Screenshots & Demos
+##  Screenshots & Demos
 
 ### AWS IoT Core - MQTT Test Client
 
@@ -269,7 +269,7 @@ Humidity: 45.5%  Temperature: 23.8°C
 
 ---
 
-## 📜 License
+##  License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
@@ -277,7 +277,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 👤 Author
+##  Author
 
 **Srijani Dey**
 
@@ -293,7 +293,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 <div align="center">
 
-### 🌟 If this project helped you, please give it a star! 🌟
+###  If this project helped you, please give it a star! 
 
 **Built with ❤️ using ESP32, DHT11, and AWS IoT Core**
 
