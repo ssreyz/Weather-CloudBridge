@@ -1,13 +1,5 @@
 # 🌤️ Weather-CloudBridge
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![ESP32](https://img.shields.io/badge/Platform-ESP32-blue.svg)](https://www.espressif.com/en/products/socs/esp32)
-[![AWS IoT](https://img.shields.io/badge/Cloud-AWS%20IoT%20Core-orange.svg)](https://aws.amazon.com/iot-core/)
-[![MQTT](https://img.shields.io/badge/Protocol-MQTT-purple.svg)](https://mqtt.org/)
-[![Arduino](https://img.shields.io/badge/Framework-Arduino-teal.svg)](https://www.arduino.cc/)
-
-> *Bridging the gap between physical sensors and cloud intelligence*
-
 A production-grade IoT environmental monitoring system that seamlessly connects ESP32 microcontrollers with AWS IoT Core. Real-time temperature and humidity data flows securely from edge devices to the cloud using industry-standard MQTT protocol with TLS encryption.
 
 ---
@@ -37,7 +29,7 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
          ▼
 ┌──────────────────┐
 │  ESP32 DevKit V1 │  Dual-Core Xtensa LX6 @ 240MHz
-│  (Microcontroller)│ WiFi: 802.11 b/g/n (2.4GHz)
+│ (Microcontroller)│ WiFi: 802.11 b/g/n (2.4GHz)
 │                  │  Flash: 4MB | RAM: 520KB
 │  • WiFi Client   │  Hardware: Crypto Acceleration (TLS)
 │  • MQTT Client   │  
@@ -105,11 +97,8 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 |-----------|--------------|---------|
 | **ESP32 DevKit V1** | ESP32-D0WD-V3, Dual-Core @ 240MHz | Main microcontroller |
 | **DHT11 Sensor** | Digital temperature & humidity sensor | Environmental sensing |
-| **Breadboard** | Standard size (830 tie-points) | Circuit prototyping |
 | **Jumper Wires** | Male-to-Male, 3 pieces minimum | Connections |
 | **USB Cable** | Micro-USB for ESP32 | Power & programming |
-
-### Total Cost: ~$10-15 USD 💰
 
 ---
 
@@ -117,44 +106,21 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 
 ### Connection Diagram
 
-```
-DHT11 Sensor          ESP32 DevKit V1
-┌─────────┐          ┌──────────────┐
-│  ┌───┐  │          │              │
-│  │ │ │  │          │              │
-│  └─┬─┘  │          │              │
-│    │    │          │              │
-│  [VCC]  ├──────────┤ 3.3V         │ (Red wire)
-│    │    │          │              │
-│  [DATA] ├──────────┤ GPIO 4 (D4)  │ (Yellow wire)
-│    │    │          │              │
-│  [NC]   │          │              │ (Not connected)
-│    │    │          │              │
-│  [GND]  ├──────────┤ GND          │ (Black wire)
-│         │          │              │
-└─────────┘          └──────────────┘
-```
+<img width="805" height="717" alt="image" src="https://github.com/user-attachments/assets/12b2d802-b6af-4403-8f3b-2e0416bcf710" />
+
 
 ### Pin Mapping Table
 
 | DHT11 Pin | Wire Color | ESP32 Pin | Description |
 |-----------|------------|-----------|-------------|
-| Pin 1 (VCC) | Red | 3.3V | Power supply |
-| Pin 2 (DATA) | Yellow | GPIO 4 (D4) | Data signal |
-| Pin 3 (NC) | - | - | Not connected |
-| Pin 4 (GND) | Black | GND | Ground |
+| Pin 1 (VCC) | Green | 3.3V | Power supply |
+| Pin 2 (DATA) | Purple | GPIO 4 (D4) | Data signal |
+| Pin 3 (GND) | Blue | GND | Ground |
 
 > ⚠️ **Important**: DHT11 operates at **3.3V only**. Do **NOT** connect to 5V pin to avoid permanent damage.
 
 ### Physical Setup Photo
-```
-    [ESP32]
-      |  |
-   3.3V GPIO4 GND
-      |   |    |
-      |   |    |
-    [DHT11 Sensor]
-```
+
 
 ---
 
@@ -177,29 +143,6 @@ DHT11 Sensor          ESP32 DevKit V1
 }
 ```
 
-**Enhanced Payload** (With Metadata):
-```json
-{
-  "device_id": "ESP32_1",
-  "timestamp": 1735689478000,
-  "uptime_ms": 45623000,
-  "message_count": 142,
-  "sensor_data": {
-    "temperature": 23.80,
-    "humidity": 45.50,
-    "unit": "celsius",
-    "heat_index": 24.15
-  },
-  "device_status": {
-    "wifi_rssi": -52,
-    "wifi_ssid": "MyNetwork",
-    "ip_address": "192.168.1.100",
-    "free_heap": 234560,
-    "chip_model": "ESP32-D0WD-V3"
-  }
-}
-```
-
 ### Subscribed Commands
 
 **Simple Text Message**:
@@ -216,14 +159,6 @@ DHT11 Sensor          ESP32 DevKit V1
   "value": 5000
 }
 ```
-
-Supported commands:
-- `reset` - Restart the device
-- `set_interval` - Change data transmission interval (ms)
-- `ping` - Request immediate status update
-- `led_on` / `led_off` - Control onboard LED
-
----
 
 ## 🚀 Quick Start Guide
 
@@ -251,14 +186,7 @@ Supported commands:
    - Visit [arduino.cc/software](https://www.arduino.cc/en/software)
    - Install version 2.0 or later
 
-2. **Add ESP32 Board Support**:
-   ```
-   Arduino IDE → File → Preferences
-   Additional Board Manager URLs:
-   https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-   ```
-
-3. **Install ESP32 Boards**:
+2. **Install ESP32 Boards**:
    ```
    Tools → Board → Boards Manager
    Search: "esp32"
@@ -302,6 +230,8 @@ Built-in libraries (no installation needed):
    - ✅ Public key (`.pem.key`)
    - ✅ Private key (`.pem.key`)
    - ✅ Amazon Root CA 1 (download from AWS)
+     <img width="758" height="924" alt="Screenshot 2025-12-31 172509" src="https://github.com/user-attachments/assets/1596057c-0a80-499b-b5e5-ae0f62718dfa" />
+
 
 3. **Activate certificates** before leaving the page
 
@@ -309,38 +239,7 @@ Built-in libraries (no installation needed):
 
 1. **Security → Policies → Create policy**
 2. **Policy name**: `ESP32_WeatherPolicy`
-3. **Policy document** (JSON):
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": "iot:Connect",
-      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:client/ESP32_*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": "iot:Publish",
-      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topic/esp32/pub"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iot:Subscribe",
-        "iot:Receive"
-      ],
-      "Resource": [
-        "arn:aws:iot:REGION:ACCOUNT_ID:topicfilter/esp32/sub",
-        "arn:aws:iot:REGION:ACCOUNT_ID:topic/esp32/sub"
-      ]
-    }
-  ]
-}
-```
-
-Replace `REGION` and `ACCOUNT_ID` with your values.
+3. **Policy document**: Given
 
 #### 3.4 Attach Policy to Certificate
 
@@ -348,12 +247,11 @@ Replace `REGION` and `ACCOUNT_ID` with your values.
 2. **Actions → Attach policy**
 3. Select `ESP32_WeatherPolicy`
 4. **Actions → Attach thing**
-5. Select `ESP32_Weather_1`
+5. Select `esp32_1`
 
 #### 3.5 Get Your IoT Endpoint
 
-1. **Settings** (bottom left)
-2. Copy **Device data endpoint**
+1. **Device data endpoint**
    - Example: `a1b2c3d4e5f6g7-ats.iot.us-east-1.amazonaws.com`
 
 ---
@@ -401,10 +299,6 @@ Replace `REGION` and `ACCOUNT_ID` with your values.
    )EOF";
    ```
 
-> 🔒 **Security Note**: Never commit `certs.h` to version control. It's already in `.gitignore`.
-
----
-
 ### Step 5: Upload & Test
 
 1. **Open `esp32_code.ino`** in Arduino IDE
@@ -449,137 +343,32 @@ Humidity: 45.5%  Temperature: 23.8°C
    Subscribe to: esp32/pub
    ```
 
-   You should see incoming messages every 2 seconds! 🎉
-
 ---
 
 ## 📸 Screenshots & Demos
 
 ### AWS IoT Core - MQTT Test Client
-![AWS MQTT Test](https://via.placeholder.com/800x400?text=AWS+IoT+MQTT+Test+Client)
+
+<img width="1918" height="918" alt="Screenshot 2025-12-31 221308" src="https://github.com/user-attachments/assets/c895f1f5-93c7-4b70-ab4d-1ae63445b8a2" />
+
 
 *Real-time sensor data streaming from ESP32 to AWS IoT Core*
 
 ---
 
 ### Arduino Serial Monitor Output
-![Serial Monitor](https://via.placeholder.com/800x400?text=Arduino+Serial+Monitor)
+
+<img width="1426" height="378" alt="image" src="https://github.com/user-attachments/assets/01412204-ba61-43a4-bb02-28e64e5b7a84" />
 
 *Live temperature and humidity readings with connection status*
 
 ---
 
 ### Hardware Assembly
-![Hardware Setup](https://via.placeholder.com/800x400?text=ESP32+DHT11+Breadboard+Setup)
+
+![WhatsApp Image 2026-01-01 at 00 37 05](https://github.com/user-attachments/assets/e71f9416-3c69-4d27-b18b-39cf7bfeace8)
 
 *Complete circuit on breadboard with labeled connections*
-
----
-
-## 🧪 Testing & Validation
-
-### 1. Test WiFi Connection
-```cpp
-// Expected in Serial Monitor:
-Connecting to WiFi...
-WiFi Connected!
-IP Address: 192.168.1.xxx
-Signal Strength: -45 dBm
-```
-
-### 2. Test AWS IoT Connection
-```cpp
-// Expected in Serial Monitor:
-Connecting to AWS IoT...
-AWS IoT Connected!
-Subscribed to: esp32/sub
-```
-
-### 3. Test Data Publishing
-- Open AWS IoT Console → Test → MQTT test client
-- Subscribe to `esp32/pub`
-- Verify messages appear every 2 seconds
-
-### 4. Test Command Reception
-- In AWS MQTT test client, publish to `esp32/sub`:
-```json
-{
-  "message": "Hello from AWS!"
-}
-```
-- Check Serial Monitor for received message
-
----
-
-## 🐛 Troubleshooting
-
-### Common Issues & Solutions
-
-#### ❌ WiFi Connection Failed
-**Symptoms**: "Connecting to WiFi..." loops indefinitely
-
-**Solutions**:
-1. Verify SSID and password (case-sensitive!)
-2. Ensure 2.4GHz network (ESP32 doesn't support 5GHz)
-3. Check WiFi signal strength (move ESP32 closer to router)
-4. Restart router and ESP32
-
----
-
-#### ❌ AWS IoT Connection Failed (rc=-2)
-**Symptoms**: "Failed, rc=-2 Retrying..."
-
-**Solutions**:
-1. Check internet connectivity
-2. Verify AWS IoT endpoint is correct
-3. Ensure port 8883 is not blocked by firewall
-4. Test with `ping` or `nslookup` from computer
-
----
-
-#### ❌ AWS IoT Connection Failed (rc=2)
-**Symptoms**: "Failed, rc=2 Retrying..."
-
-**Solutions**:
-1. Verify all certificates are correctly pasted
-2. Check for extra spaces or line breaks in certificates
-3. Ensure certificate is activated in AWS
-4. Verify IoT policy is attached to certificate
-5. Check Thing name matches `THINGNAME` in code
-
----
-
-#### ❌ DHT Sensor Reading NaN
-**Symptoms**: "Failed to read from DHT sensor!"
-
-**Solutions**:
-1. Check wiring (especially DATA pin to GPIO 4)
-2. Ensure DHT11 is powered with 3.3V (not 5V)
-3. Add 2-second delay after `dht.begin()`
-4. Try a different GPIO pin (update `DHTPIN` accordingly)
-5. Test with known-good DHT11 sensor
-
----
-
-#### ❌ Upload Failed / Port Not Detected
-**Symptoms**: ESP32 not showing in port list
-
-**Solutions**:
-1. Install CH340/CP2102 USB drivers
-2. Try a different USB cable (some are power-only)
-3. Hold BOOT button while clicking Upload
-4. Check Device Manager (Windows) for port issues
-
----
-
-#### ❌ Certificate Format Errors
-**Symptoms**: Compilation errors related to certificates
-
-**Solutions**:
-1. Ensure certificates are wrapped in `R"EOF( ... )EOF"`
-2. Keep `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines
-3. No extra quotes or escape characters
-4. Use the provided `certs.h.example` as template
 
 ---
 
@@ -595,72 +384,6 @@ Subscribed to: esp32/sub
 | **Power Consumption** | ~160 mA @ 3.3V | Active mode |
 | **WiFi Reconnection Time** | 5-10 seconds | Depends on network |
 | **MQTT Reconnection Time** | 2-5 seconds | Automatic retry |
-
----
-
-## 🚀 Future Enhancements & Roadmap
-
-### Phase 1: Data Storage & Visualization ✅ Planned
-- [ ] **AWS DynamoDB Integration**: Store historical sensor data
-- [ ] **AWS Lambda Functions**: Process and aggregate data
-- [ ] **Web Dashboard**: Real-time React-based visualization
-- [ ] **Data Export**: CSV/JSON export functionality
-
-### Phase 2: Advanced Features 🔮 Future
-- [ ] **Multiple Sensor Support**: BME280, MQ-135 (air quality)
-- [ ] **Mobile App**: React Native companion app
-- [ ] **Alert System**: Email/SMS via AWS SNS
-- [ ] **Predictive Analytics**: ML-based temperature forecasting (SageMaker)
-
-### Phase 3: Production Ready 🎯 Long-term
-- [ ] **OTA Updates**: Over-the-air firmware updates
-- [ ] **Device Fleet Management**: Multi-device dashboard
-- [ ] **Deep Sleep Mode**: Battery optimization
-- [ ] **Alexa Integration**: Voice-controlled queries
-
-Want to contribute? Check out [CONTRIBUTING.md](CONTRIBUTING.md)!
-
----
-
-## 📚 Learning Resources
-
-### AWS IoT Documentation
-- [AWS IoT Core Developer Guide](https://docs.aws.amazon.com/iot/latest/developerguide/)
-- [AWS IoT Security Best Practices](https://docs.aws.amazon.com/iot/latest/developerguide/security-best-practices.html)
-- [MQTT Protocol Specification](https://mqtt.org/mqtt-specification/)
-
-### ESP32 Resources
-- [ESP32 Official Documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)
-- [Arduino ESP32 Core](https://github.com/espressif/arduino-esp32)
-- [DHT Sensor Library Documentation](https://github.com/adafruit/DHT-sensor-library)
-
-### Related Projects
-- [AWS IoT EduKit](https://aws.amazon.com/iot/edukit/)
-- [ESP32 IoT Examples](https://github.com/espressif/esp-aws-iot)
-
----
-
-## 🤝 Contributing
-
-Contributions make the open-source community amazing! Any contributions you make are **greatly appreciated**.
-
-### How to Contribute
-
-1. **Fork** the project
-2. **Create** your feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
-
-### Contribution Ideas
-- 🐛 Bug fixes
-- 📝 Documentation improvements
-- ✨ New features (sensors, cloud integrations)
-- 🎨 Web dashboard enhancements
-- 🧪 Unit tests
-- 🌐 Internationalization
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ---
 
@@ -686,58 +409,10 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 🌟 Acknowledgments
-
-Special thanks to:
-
-- **Espressif Systems** - For the incredible ESP32 platform
-- **Arduino Community** - For extensive library support
-- **AWS IoT Team** - For comprehensive documentation
-- **Adafruit** - For DHT sensor libraries
-- **Open Source Contributors** - For making IoT accessible to everyone
-
----
-
-## 📞 Support & Contact
-
-### Need Help?
-
-1. 📖 **Check Documentation**: Start with [Troubleshooting](#-troubleshooting)
-2. 🐛 **Report Issues**: [GitHub Issues](https://github.com/ssreyz/Weather-CloudBridge/issues)
-3. 💬 **Ask Questions**: [Discussions](https://github.com/ssreyz/Weather-CloudBridge/discussions)
-4. 📧 **Email**: [srijani.258@gmail.com](mailto:srijani.258@gmail.com)
-
-### Feedback Welcome!
-
-Found this project helpful? Consider:
-- ⭐ **Starring the repository**
-- 🍴 **Forking and building upon it**
-- 📢 **Sharing with others**
-- 💬 **Providing feedback**
-
----
-
-## 📈 Project Stats
-
-![GitHub last commit](https://img.shields.io/github/last-commit/ssreyz/Weather-CloudBridge)
-![GitHub issues](https://img.shields.io/github/issues/ssreyz/Weather-CloudBridge)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/ssreyz/Weather-CloudBridge)
-![GitHub code size](https://img.shields.io/github/languages/code-size/ssreyz/Weather-CloudBridge)
-
----
-
 <div align="center">
 
 ### 🌟 If this project helped you, please give it a star! 🌟
 
 **Built with ❤️ using ESP32, DHT11, and AWS IoT Core**
 
-*Transforming physical sensors into cloud-connected intelligence*
-
 </div>
-
----
-
-## 🔖 Tags
-
-`iot` `esp32` `aws-iot-core` `mqtt` `arduino` `dht11` `temperature-sensor` `humidity-sensor` `embedded-systems` `cloud-computing` `aws` `smart-home` `weather-station` `real-time-monitoring` `tls-encryption` `x509-certificates` `pubsubclient` `json` `arduino-ide` `embedded-c`
