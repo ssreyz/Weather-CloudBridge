@@ -180,22 +180,7 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 
 ---
 
-### Step 1: Install Arduino IDE & ESP32 Support
-
-1. **Download Arduino IDE**:
-   - Visit [arduino.cc/software](https://www.arduino.cc/en/software)
-   - Install version 2.0 or later
-
-2. **Install ESP32 Boards**:
-   ```
-   Tools → Board → Boards Manager
-   Search: "esp32"
-   Install: "esp32 by Espressif Systems"
-   ```
-
----
-
-### Step 2: Install Required Libraries
+## Required Libraries
 
 Open Arduino IDE and install these libraries via **Tools → Manage Libraries**:
 
@@ -210,120 +195,9 @@ Built-in libraries (no installation needed):
 - `WiFi.h`
 - `WiFiClientSecure.h`
 
----
-
-### Step 3: Set Up AWS IoT Core
-
-#### 3.1 Create an IoT Thing
-
-1. **Log in to AWS Console** → Navigate to **IoT Core**
-2. **Manage → Things → Create Things**
-3. **Create single thing**:
-   - Thing name: `ESP32_Weather_1`
-   - Device Shadow: Classic Shadow (recommended)
-
-#### 3.2 Generate Certificates
-
-1. **Auto-generate certificates** (Recommended)
-2. **Download all 4 files**:
-   - ✅ Device certificate (`.pem.crt`)
-   - ✅ Public key (`.pem.key`)
-   - ✅ Private key (`.pem.key`)
-   - ✅ Amazon Root CA 1 (download from AWS)
-     <img width="758" height="924" alt="Screenshot 2025-12-31 172509" src="https://github.com/user-attachments/assets/1596057c-0a80-499b-b5e5-ae0f62718dfa" />
-
-
-3. **Activate certificates** before leaving the page
-
-#### 3.3 Create IoT Policy
-
-1. **Security → Policies → Create policy**
-2. **Policy name**: `ESP32_WeatherPolicy`
-3. **Policy document**: Given
-
-#### 3.4 Attach Policy to Certificate
-
-1. **Security → Certificates → Select your certificate**
-2. **Actions → Attach policy**
-3. Select `ESP32_WeatherPolicy`
-4. **Actions → Attach thing**
-5. Select `esp32_1`
-
-#### 3.5 Get Your IoT Endpoint
-
-1. **Device data endpoint**
-   - Example: `a1b2c3d4e5f6g7-ats.iot.us-east-1.amazonaws.com`
-
----
-
-### Step 4: Configure the Code
-
-1. **Clone this repository**:
-   ```bash
-   git clone https://github.com/ssreyz/Weather-CloudBridge.git
-   cd Weather-CloudBridge/esp32_code
    ```
 
-2. **Create `certs.h`** from the template:
-   ```bash
-   cp certs.h.example certs.h
-   ```
-
-3. **Edit `certs.h`** and add your credentials:
-   ```cpp
-   // WiFi Credentials
-   const char* WIFI_SSID = "Your_WiFi_Name";
-   const char* WIFI_PASSWORD = "Your_WiFi_Password";
-   
-   // AWS IoT Endpoint
-   const char* AWS_IOT_ENDPOINT = "xxxxxx-ats.iot.us-east-1.amazonaws.com";
-   const char* THINGNAME = "ESP32_Weather_1";
-   
-   // Certificates (paste your downloaded certificates here)
-   const char AWS_CERT_CA[] PROGMEM = R"EOF(
-   -----BEGIN CERTIFICATE-----
-   [Paste Amazon Root CA 1 certificate here]
-   -----END CERTIFICATE-----
-   )EOF";
-   
-   const char AWS_CERT_CRT[] PROGMEM = R"EOF(
-   -----BEGIN CERTIFICATE-----
-   [Paste your device certificate here]
-   -----END CERTIFICATE-----
-   )EOF";
-   
-   const char AWS_CERT_PRIVATE[] PROGMEM = R"EOF(
-   -----BEGIN RSA PRIVATE KEY-----
-   [Paste your private key here]
-   -----END RSA PRIVATE KEY-----
-   )EOF";
-   ```
-
-### Step 5: Upload & Test
-
-1. **Open `esp32_code.ino`** in Arduino IDE
-
-2. **Select Board**:
-   ```
-   Tools → Board → ESP32 Dev Module
-   ```
-
-3. **Select Port**:
-   ```
-   Tools → Port → (Select your ESP32's COM port)
-   ```
-
-4. **Upload**:
-   - Click **Upload** button (→)
-   - Wait for "Hard resetting via RTS pin..."
-
-5. **Open Serial Monitor**:
-   ```
-   Tools → Serial Monitor
-   Set baud rate: 115200
-   ```
-
-Expected output:
+### Expected output:
 ```
 === ESP32 Weather-CloudBridge ===
 Connecting to WiFi...
@@ -337,7 +211,7 @@ Humidity: 45.5%  Temperature: 23.8°C
 ✓ Message published
 ```
 
-6. **Verify in AWS IoT Console**:
+### Verify in AWS IoT Console:
    ```
    Test → MQTT test client
    Subscribe to: esp32/pub
@@ -369,6 +243,14 @@ Humidity: 45.5%  Temperature: 23.8°C
 ![WhatsApp Image 2026-01-01 at 00 37 05](https://github.com/user-attachments/assets/e71f9416-3c69-4d27-b18b-39cf7bfeace8)
 
 *Complete circuit on breadboard with labeled connections*
+
+---
+### AWS IoT Core - Certificates
+
+  <img width="758" height="924" alt="Screenshot 2025-12-31 172509" src="https://github.com/user-attachments/assets/1596057c-0a80-499b-b5e5-ae0f62718dfa" />
+
+
+*All the certificate is needed to connect iot to AWS*
 
 ---
 
