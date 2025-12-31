@@ -113,9 +113,9 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 
 | DHT11 Pin | Wire Color | ESP32 Pin | Description |
 |-----------|------------|-----------|-------------|
-| Pin 1 (VCC) | Green | 3.3V | Power supply |
+| Pin 1 (VCC) | Red | 3.3V | Power supply |
 | Pin 2 (DATA) | Purple | GPIO 4 (D4) | Data signal |
-| Pin 3 (GND) | Blue | GND | Ground |
+| Pin 3 (GND) | Black | GND | Ground |
 
 > ⚠️ **Important**: DHT11 operates at **3.3V only**. Do **NOT** connect to 5V pin to avoid permanent damage.
 
