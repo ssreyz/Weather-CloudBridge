@@ -36,8 +36,8 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 │  • JSON Parser   │  
 └────────┬─────────┘
          │
-         │ 📡 Secure MQTT over TLS (Port 8883)
-         │ 🔐 X.509 Certificate Authentication
+         │  Secure MQTT over TLS (Port 8883)
+         │  X.509 Certificate Authentication
          │
          ▼
 ┌──────────────────┐
@@ -57,7 +57,7 @@ Perfect for **portfolio projects**, **learning AWS IoT**, or as a **foundation f
 │  • Lambda        │  Process & analyze
 │  • SNS/SES       │  Alerts & notifications
 │  • QuickSight    │  Data visualization
-│  • SageMaker     │  ML predictions
+|                  |
 └──────────────────┘
 ```
 
