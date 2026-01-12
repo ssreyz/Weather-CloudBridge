@@ -1,10 +1,10 @@
-# 🌤️ Weather-CloudBridge
+# 🌤️ Agricultural-CloudBridge
 
 A production-grade IoT agricultural monitoring system that seamlessly connects ESP32 microcontrollers with AWS IoT Core. Real-time temperature and humidity, soil humidity data flows securely from edge devices to the cloud using industry-standard MQTT protocol with TLS encryption.
 
 ---
 
-##  Why Weather-CloudBridge?
+##  Why Agricultural-CloudBridge?
 
 This project isn't just another IoT demo—it's a **complete, deployment-ready solution** that demonstrates:
 
